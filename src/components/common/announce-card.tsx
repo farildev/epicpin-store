@@ -26,7 +26,7 @@ const AnnounceCard = ({ data }: AnnounceCardProps) => {
           {data.categories &&
             data.categories.map((category: string, index: number) => (
               <span
-                className="absolute top-2 right-2 bg-main w-16 flex items-center justify-center p-1 rounded-full text-sm font-semibold"
+                className="absolute top-2 right-2 text-white bg-main w-16 flex items-center justify-center p-1 rounded-full text-sm font-semibold"
                 key={index}
               >
                 {category}
