@@ -140,22 +140,25 @@ const Footer: React.FC = () => {
           </span>
           <div className="flex items-center gap-2">
             <a
-              href="#"
+              href="https://wa.me/+994554570995"
               aria-label="WhatsApp"
+              target="_blank"
               className="flex items-center justify-center p-2 rounded-full bg-gray-100 dark:bg-gray-100/10 hover:bg-green-500 hover:text-white transition-colors duration-200"
             >
               <FaWhatsapp size={18} />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/epicpin.store?igsh=MWM0emMzZGRqMGNycQ=="
               aria-label="Instagram"
+              target="blank"
               className="flex items-center justify-center p-2 rounded-full bg-gray-100 dark:bg-gray-100/10 hover:bg-pink-600 hover:text-white transition-colors duration-200"
             >
               <FaInstagram size={18} />
             </a>
             <a
-              href="#"
+              href="https://www.tiktok.com/@epicpin.store?_t=ZS-8yqhCF4LCds&_r=1"
               aria-label="TikTok"
+              target="blank"
               className="flex items-center justify-center p-2 rounded-full bg-gray-100 dark:bg-gray-100/10 hover:bg-black hover:text-white transition-colors duration-200"
             >
               <FaTiktok size={18} />
