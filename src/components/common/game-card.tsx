@@ -17,13 +17,21 @@ interface GameCardProps {
   product: Product;
   icon?: string;
 }
+const WHATSAPP_NUMBER = '+994554570995';
 
 const GameCard: React.FC<GameCardProps> = ({ product, icon }) => {
   const addToBasket = useBasketStore((state) => state.addToBasket);
 
   const handleAddToBasket = (product: Product) => {
-    addToBasket({ ...product, quantity: 1 }); // <- quantity əlavə edildi
+    addToBasket({ ...product, quantity: 1 });
     toast.success(`${product.title} adlı məhsul səbətə əlavə edildi`);
+  };
+
+  const handleBuyNow = () => {
+    const message = `Salam, aşağıdakı məhsulu almaq istəyirəm:\n\n • Məhsul: ${product.title}\n • Qiymət: ${product.price} ₼\n\nZəhmət olmasa sifarişimi qeydə alın.`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    window.open(whatsappLink, '_blank');
   };
 
   return (
@@ -42,11 +50,14 @@ const GameCard: React.FC<GameCardProps> = ({ product, icon }) => {
         <div className="flex items-center gap-2">
           <Button
             onClick={() => handleAddToBasket(product)}
-            className="hover:bg-main/90 bg-main p-2 border bg-transparent dark:bg-transparent text-main dark:text-main dark:hover:bg-main dark:hover:text-white hover:text-white border-main"
+            className="cursor-pointer hover:bg-main/90 bg-main p-2 border dark:bg-transparent text-main dark:text-main dark:hover:bg-main dark:hover:text-white hover:text-white border-main"
           >
             <ShoppingBasket size={16} />
           </Button>
-          <Button className="bg-main dark:bg-main dark:text-white text-white dark:hover:bg-main/90">
+          <Button
+            onClick={handleBuyNow}
+            className="bg-main cursor-pointer dark:bg-main dark:text-white text-white dark:hover:bg-main/90"
+          >
             <ShoppingCart size={16} className="mr-2" />
             İndi al
           </Button>

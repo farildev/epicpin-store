@@ -12,6 +12,7 @@ interface BasketItem {
   price: number;
   quantity: number;
 }
+const WHATSAPP_NUMBER = '+994554570995';
 
 const Basket: React.FC = () => {
   const router = useRouter();
@@ -22,6 +23,22 @@ const Basket: React.FC = () => {
     (acc, item) => acc + item.price * (item.quantity || 0),
     0,
   );
+
+  const handleBuyProducts = () => {
+    const productLines = basket
+      .map(
+        (item) =>
+          `• ${item.title} - ${item.price} ₼ x ${item.quantity} = ${(item.price * item.quantity).toFixed(2)} ₼`,
+      )
+      .join('\n');
+
+    const message = `Salam, aşağıdakı məhsulları almaq istəyirəm:\n\n${productLines}\n\n *Ümumi ödəniləcək məbləğ:* ${totalPrice} ₼\n\nZəhmət olmasa sifarişimi qeydə alın.`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+    window.open(whatsappLink, '_blank');
+  };
 
   return (
     <div className="w-full min-h-dvh pt-[120px] pb-10">
@@ -36,12 +53,15 @@ const Basket: React.FC = () => {
           <div className="flex items-center gap-2">
             <Button
               onClick={clearBasket}
-              className="bg-light text-black border dark:text-white hover:bg-light/80 dark:hover:bg-neutral-800 dark:border-gray-200/10 shadow-none dark:bg-neutral-900"
+              className="cursor-pointer bg-light text-black border dark:text-white hover:bg-light/80 dark:hover:bg-neutral-800 dark:border-gray-200/10 shadow-none dark:bg-neutral-900"
             >
               <Trash />
               Səbəti boşalt
             </Button>
-            <Button className="bg-main text-white shadow-none hover:bg-main/80">
+            <Button
+              onClick={handleBuyProducts}
+              className="cursor-pointer bg-main text-white shadow-none hover:bg-main/80"
+            >
               <Check />
               Sifarişi tamamla
             </Button>
@@ -61,7 +81,7 @@ const Basket: React.FC = () => {
               Səbət hal-hazırda boşdur!
             </h2>
             <Button
-              className="bg-main text-white"
+              className="bg-main text-white cursor-pointer"
               onClick={() => router.push('/games')}
             >
               <ArrowLeft />
