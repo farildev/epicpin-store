@@ -25,6 +25,8 @@ const AnnounceDetail = async ({ params }: PageProps) => {
     slug: params.slug,
   });
 
+  console.log(post);
+
   if (!post) {
     notFound();
   }
@@ -43,20 +45,30 @@ const AnnounceDetail = async ({ params }: PageProps) => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>{post?.title}</BreadcrumbPage>
+              <BreadcrumbPage>{post?._id}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        {post.mainImage && (
-          <Image
-            src={post.mainImage.asset.url}
-            alt={post.mainImage.alt || post.title}
-            width={1200}
-            height={600}
-            className="w-full h-[300px] object-cover rounded-lg my-8"
-            priority
-          />
-        )}
+        <div className="relative w-full h-[400px] my-8">
+          {post.mainImage && (
+            <Image
+              src={post.mainImage.asset.url}
+              alt={post.mainImage.alt || post.title}
+              fill
+              className="w-full h-full object-cover rounded-lg"
+              priority
+            />
+          )}
+          {post.categories &&
+            post.categories.map((category: string, index: number) => (
+              <span
+                className="absolute top-5 right-5 text-white bg-main w-16 flex items-center justify-center p-1 rounded-full text-sm font-semibold"
+                key={index}
+              >
+                {category}
+              </span>
+            ))}
+        </div>
 
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
 

@@ -31,6 +31,7 @@ export const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
     alt
   },
   publishedAt,
+  "categories": categories[]->title,
   "author": author->{
     name,
     image{ asset->{_id, url}, alt }
