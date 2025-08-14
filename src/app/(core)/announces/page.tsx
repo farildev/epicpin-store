@@ -8,8 +8,6 @@ const Announces = async () => {
     {},
     { next: { revalidate: 60 } },
   );
-
-  console.log(posts);
   return (
     <div className="min-h-dvh pt-[120px]">
       <div className="siteContainer">

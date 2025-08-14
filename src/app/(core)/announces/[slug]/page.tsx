@@ -25,8 +25,6 @@ const AnnounceDetail = async ({ params }: PageProps) => {
     slug: params.slug,
   });
 
-  console.log(post);
-
   if (!post) {
     notFound();
   }
