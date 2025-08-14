@@ -3,7 +3,11 @@ import { POSTS_QUERY } from '@/lib/sanity/queries';
 import { BlogPost } from '@/types/sanity';
 import AnnounceCard from '@/components/common/announce-card';
 const Announces = async () => {
-  const posts: BlogPost[] = await sanityClient.fetch(POSTS_QUERY);
+  const posts: BlogPost[] = await sanityClient.fetch(
+    POSTS_QUERY,
+    {},
+    { next: { revalidate: 60 } },
+  );
 
   console.log(posts);
   return (

@@ -24,7 +24,7 @@ const AnnounceDetail = async ({ params }: PageProps) => {
   }
 
   return (
-    <div className="min-h-dvh pt-[120px]">
+    <div className="min-h-dvh pt-[120px] pb-10">
       <div className="siteContainer">
         {/* Back link */}
         <Link

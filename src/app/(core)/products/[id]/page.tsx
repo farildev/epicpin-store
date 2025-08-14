@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import { Flame, Star } from 'lucide-react';
 import { notFound } from 'next/navigation';
@@ -14,7 +13,6 @@ import {
 } from '@/components/ui/breadcrumb';
 import { gamesData } from '@/mocks/gamesData';
 
-// Tip tərifləri
 interface Product {
   id: string | number;
   title: string;
@@ -40,7 +38,7 @@ interface GameDetailProps {
   };
 }
 
-const GameDetail: React.FC<GameDetailProps> = ({ params }) => {
+const GameDetail: React.FC<GameDetailProps> = async ({ params }) => {
   const { id } = params;
   const game = gamesData.find((g) => g.id === parseInt(id)) as Game | undefined;
 

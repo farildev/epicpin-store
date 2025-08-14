@@ -14,7 +14,7 @@ const AnnounceCard = ({ data }: AnnounceCardProps) => {
         key={data._id}
         className="border border-gray-200 dark:border-gray-100/10 rounded-lg"
       >
-        <div className="relative h-[200px] overflow-hidden group">
+        <div className="relative h-[200px] w-full overflow-hidden group">
           {data.mainImage && (
             <Image
               src={data.mainImage.asset.url}
