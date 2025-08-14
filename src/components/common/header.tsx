@@ -48,6 +48,12 @@ const Header: React.FC = () => {
             </Link>
             <Link
               className="hover:scale-105 transition-all duration-200 hover:text-main"
+              href={'/announces'}
+            >
+              Elanlar
+            </Link>
+            <Link
+              className="hover:scale-105 transition-all duration-200 hover:text-main"
               href={'/contact'}
             >
               Əlaqə

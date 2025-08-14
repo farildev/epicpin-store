@@ -72,6 +72,14 @@ const Footer: React.FC = () => {
                 <li>
                   <Link
                     className="text-gray-500 hover:text-white transition-colors duration-200"
+                    href={'/announces'}
+                  >
+                    Elanlar
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-gray-500 hover:text-white transition-colors duration-200"
                     href={'/contact'}
                   >
                     Əlaqə
