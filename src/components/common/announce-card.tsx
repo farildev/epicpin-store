@@ -2,25 +2,25 @@ import { BlogPost } from '@/types/sanity';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-
 interface AnnounceCardProps {
   data: BlogPost;
 }
 
 const AnnounceCard = ({ data }: AnnounceCardProps) => {
+  console.log(data);
   return (
     <Link href={`/announces/${data.slug.current}`}>
       <article
         key={data._id}
         className="border border-gray-200 dark:border-gray-100/10 rounded-lg"
       >
-        <div className="relative h-[200px] w-full overflow-hidden group">
+        <div className="relative h-[200px] w-full overflow-hidden rounded-t-lg group">
           {data.mainImage && (
             <Image
               src={data.mainImage.asset.url}
               alt={data.mainImage.alt || data.title}
               fill
-              className="w-full h-full object-center object-cover group-hover:scale-110 transition-all duration-200 rounded"
+              className="w-full h-full object-center object-cover group-hover:scale-110 transition-all duration-200"
             />
           )}
           {data.categories &&
@@ -38,6 +38,18 @@ const AnnounceCard = ({ data }: AnnounceCardProps) => {
             {data.title}
           </h2>
           {data.excerpt && <p className="text-gray-600 mb-4">{data.excerpt}</p>}
+          {data.author && (
+            <div className="flex items-center gap-2 my-3">
+              <Image
+                width={32}
+                height={32}
+                className="rounded-full"
+                src={data.author.image?.asset?.url || ''}
+                alt={data.author.image?.alt || 'Author image'}
+              />
+              <span className="font-medium text-sm">{data.author.name}</span>
+            </div>
+          )}
           <div className="text-sm text-gray-500 mt-2">
             {new Date(data.publishedAt).toLocaleDateString('az-AZ')}
           </div>

@@ -13,7 +13,10 @@ export const POSTS_QUERY = `*[_type == "post" && defined(slug.current)][0...12]{
     alt
   },
   "categories": categories[]->title,
-  "author": author->{name, image}
+  "author": author->{
+    name,
+    image{ asset->{_id, url}, alt }
+  }
 }` as const
 
 export const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
@@ -28,5 +31,8 @@ export const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
     alt
   },
   publishedAt,
-  "author": author->{name, image}
+  "author": author->{
+    name,
+    image{ asset->{_id, url}, alt }
+  }
 }` as const
