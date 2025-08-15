@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  poweredByHeader: false,
   images: {
     remotePatterns: [
       {
@@ -9,6 +11,16 @@ const nextConfig: NextConfig = {
         pathname: '/images/**',
       },
     ],
+  },
+  env: {
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+    styledComponents: true,
+  },
+  experimental: {
+    turbo: {},
   },
 };
 
