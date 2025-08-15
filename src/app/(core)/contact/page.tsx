@@ -1,5 +1,28 @@
 import ContactForm from '@/components/common/contact-form';
 import RocketAnimation from '@/components/common/rocket-animation';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Bizimlə əlaqə',
+  description:
+    'Epicpin Store — Bizimlə əlaqəyə keçin, istək və təkliflərinizi bizə çatdırın.',
+  authors: [{ name: 'Faril Mammadov', url: 'https://www.faril.dev/' }],
+  keywords: [
+    'Epicpin Store',
+    'PUBG Mobile UC',
+    'Valorant Points',
+    'FC 25 Points',
+    'Point Blank Cash',
+    'TikTok jeton',
+    'oyun ödənişləri',
+    'epin satış',
+    'ucuz oyun valyutası',
+  ],
+  icons: {
+    icon: '/images/logo.svg',
+  },
+};
+
 const Contact = () => {
   return (
     <div className="w-full pt-[100px]">

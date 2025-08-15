@@ -2,6 +2,29 @@ import { sanityClient } from '@/lib/sanity/sanity';
 import { POSTS_QUERY } from '@/lib/sanity/queries';
 import { BlogPost } from '@/types/sanity';
 import AnnounceCard from '@/components/common/announce-card';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Elanlar',
+  description:
+    'Epicpin Store — Oyunlar və yeniliklər haqqında bütün məlumatları buradan ala bilərsiniz.',
+  authors: [{ name: 'Faril Mammadov', url: 'https://www.faril.dev/' }],
+  keywords: [
+    'Epicpin Store',
+    'PUBG Mobile UC',
+    'Valorant Points',
+    'FC 25 Points',
+    'Point Blank Cash',
+    'TikTok jeton',
+    'oyun ödənişləri',
+    'epin satış',
+    'ucuz oyun valyutası',
+  ],
+  icons: {
+    icon: '/images/logo.svg',
+  },
+};
+
 const Announces = async () => {
   const posts: BlogPost[] = await sanityClient.fetch(
     POSTS_QUERY,

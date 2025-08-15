@@ -3,7 +3,7 @@ import { gamesData } from '@/mocks/gamesData';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Bütün Məhsullar | Epicpin Store',
+  title: 'Bütün Məhsullar ',
   description:
     'Epicpin Store — PUBG Mobile, Valorant, FC 25, Point Blank, TikTok Jeton və daha çox oyun üçün ucuz və etibarlı ödəniş sistemi. Sürətli çatdırılma və münasib qiymətlər!',
   authors: [{ name: 'Faril Mammadov', url: 'https://www.faril.dev/' }],
