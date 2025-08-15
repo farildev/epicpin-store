@@ -61,6 +61,12 @@ const Sidebar: React.FC = () => {
             </Link>
             <Link
               className="text-2xl font-semibold hover:text-main hover:scale-[101%] transition-all duration-300"
+              href={'/announces'}
+            >
+              Elanlar
+            </Link>
+            <Link
+              className="text-2xl font-semibold hover:text-main hover:scale-[101%] transition-all duration-300"
               href={'/contact'}
             >
               Əlaqə
