@@ -141,4 +141,35 @@ const GameDetail: React.FC<GameDetailProps> = async ({ params }) => {
   );
 };
 
+export async function generateMetadata({ params }: GameDetailProps) {
+  const { id } = params;
+  const game = gamesData.find((g) => g.id === parseInt(id)) as Game | undefined;
+
+  if (!game) {
+    notFound();
+  }
+
+  return {
+    title: game.name,
+    description: game.description,
+    openGraph: {
+      title: game.name,
+      description: game.description,
+      rating: game.gameRating,
+      image: {
+        url: game.image,
+        width: 1200,
+        height: 630,
+        alt: game.name,
+      },
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: game.name,
+      description: game.description,
+      images: game.image,
+    },
+  };
+}
+
 export default GameDetail;
