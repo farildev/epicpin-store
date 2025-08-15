@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'ucuz oyun valyutası',
   ],
   icons: {
-    icon: '/images/logo.svg',
+    icon: '/images/logo-main.svg',
   },
 };
 
