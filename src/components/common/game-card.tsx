@@ -17,7 +17,7 @@ interface GameCardProps {
   product: Product;
   icon?: string;
 }
-const WHATSAPP_NUMBER = '+994554570995';
+const WHATSAPP_NUMBER = '+994513348446';
 
 const GameCard: React.FC<GameCardProps> = ({ product, icon }) => {
   const addToBasket = useBasketStore((state) => state.addToBasket);

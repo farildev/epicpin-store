@@ -12,7 +12,7 @@ interface BasketItem {
   price: number;
   quantity: number;
 }
-const WHATSAPP_NUMBER = '+994554570995';
+const WHATSAPP_NUMBER = '+994513348446';
 
 const Basket: React.FC = () => {
   const router = useRouter();
