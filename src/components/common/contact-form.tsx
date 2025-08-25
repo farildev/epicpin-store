@@ -187,7 +187,7 @@ const ContactForm = () => {
       <Button
         type="submit"
         disabled={isLoading}
-        className="w-fit bg-main font-medium hover:bg-orange-700 disabled:opacity-50 gap-2"
+        className="w-fit bg-main text-white font-medium hover:bg-orange-700 disabled:opacity-50 gap-2"
       >
         <SendHorizontal size={16} />
         {isLoading ? 'Göndərilir...' : 'Göndər'}
