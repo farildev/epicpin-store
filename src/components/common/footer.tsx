@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import { Mail } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { gamesData } from '@/mocks/gamesData';
 
 const Footer: React.FC = () => {
   const { theme } = useTheme();
@@ -93,51 +94,41 @@ const Footer: React.FC = () => {
           <div className="flex sm:justify-center sm:w-1/3 w-full">
             <div className="flex flex-col gap-3">
               <h3 className="sm:text-lg text-md font-medium text-white">
-                Ən çox satan oyunlar
+                Ən çox satan
               </h3>
               <ul className="flex flex-col gap-4 text-sm font-medium">
-                <li>
-                  <Link
-                    className="text-gray-500 hover:text-white transition-colors duration-200"
-                    href={'/products/1'}
-                  >
-                    PUBG Mobile UC
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-500 hover:text-white transition-colors duration-200"
-                    href={'/products/2'}
-                  >
-                    PUBG Mobile Prime
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-500 hover:text-white transition-colors duration-200"
-                    href={'/products/5'}
-                  >
-                    Steam Wallet
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="text-gray-500 hover:text-white transition-colors duration-200"
-                    href={'/products/4'}
-                  >
-                    Point Blank
-                  </Link>
-                </li>
+                {gamesData
+                  .map((game) => (
+                    <li key={game.id}>
+                      <Link
+                        className="text-gray-500 hover:text-white transition-colors duration-200"
+                        href={`/products/${game.id}`}
+                      >
+                        {game.name}
+                      </Link>
+                    </li>
+                  ))
+                  .slice(0, 4)}
               </ul>
             </div>
           </div>
         </div>
 
-        {/* Alt hissə */}
         <div className="py-6 border-t border-gray-100/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <span className="text-sm text-gray-500 flex-1">
-            Copyright © {currentYear} Bütün hüquqları qorunur.
-          </span>
+          <div className="flex items-center gap-1">
+            <span className="text-sm text-gray-500 flex-1">
+              Copyright © {currentYear} Bütün hüquqları qorunur.
+            </span>
+            <span className="text-sm text-gray-500 ">
+              POWERED BY{' '}
+              <a
+                className="underline"
+                href="https://www.instagram.com/corotive/"
+              >
+                Corotive
+              </a>
+            </span>
+          </div>
           <div className="flex items-center gap-2">
             <a
               href="https://wa.me/+994554570995"
