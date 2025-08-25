@@ -50,9 +50,7 @@ const Footer: React.FC = () => {
           {/* Naviqasiya */}
           <nav className="flex sm:justify-center sm:w-1/3 w-full">
             <div className="flex flex-col gap-3">
-              <h3 className="sm:text-lg text-md font-medium text-white">
-                Epicpin Store
-              </h3>
+              <h3 className="sm:text-lg text-md font-medium ">Epicpin Store</h3>
               <ul className="flex flex-col gap-4 text-sm font-medium">
                 <li>
                   <Link
@@ -93,9 +91,7 @@ const Footer: React.FC = () => {
           {/* Ən çox satan oyunlar */}
           <div className="flex sm:justify-center sm:w-1/3 w-full">
             <div className="flex flex-col gap-3">
-              <h3 className="sm:text-lg text-md font-medium text-white">
-                Ən çox satan
-              </h3>
+              <h3 className="sm:text-lg text-md font-medium">Ən çox satan</h3>
               <ul className="flex flex-col gap-4 text-sm font-medium">
                 {gamesData
                   .map((game) => (
