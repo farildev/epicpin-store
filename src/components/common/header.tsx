@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   const openSidebar = useComponentStore((state) => state.openSidebar);
 
   return (
-    <header className="fixed z-30 max-w-[1080px] mx-auto bg-white/50 dark:bg-dark/80 lg:rounded-full border border-gray-200/50 dark:border-gray-100/5 lg:top-5 top-0 left-0 right-0 w-full">
+    <header className="fixed z-30 lg:w-[1080px] mx-auto bg-white dark:bg-dark lg:rounded-full border border-gray-200/50 dark:border-gray-100/5 lg:top-5 top-0 left-0 right-0 w-full">
       <div className="siteContainer">
         <div className="flex items-center justify-between">
           <Link href={'/'}>
