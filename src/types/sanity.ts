@@ -1,3 +1,5 @@
+import { PortableTextBlock } from "@portabletext/react"
+
 export interface SanityImageAsset {
   _id: string
   url: string
@@ -21,7 +23,7 @@ export interface BlogPost {
   }
   publishedAt: string
   excerpt?: string
-  body: any[]
+  body: PortableTextBlock
   mainImage?: SanityImage
   categories?: string[]
   author?: Author
