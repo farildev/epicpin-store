@@ -8,7 +8,7 @@ const AnimationSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const grid: [number, number] = [6, 12];
 
-  const createBoxes = (): JSX.Element[] => {
+  const createBoxes = (): React.ReactElement[] => {
     return Array.from({ length: grid[0] * grid[1] }).map((_, index) => (
       <div key={index} className="box w-5 h-5 bg-main rounded-md"></div>
     ));
