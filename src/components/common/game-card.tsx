@@ -56,7 +56,7 @@ const GameCard: React.FC<GameCardProps> = ({ product, icon }) => {
           </Button>
           <Button
             onClick={handleBuyNow}
-            className="bg-main cursor-pointer dark:bg-main dark:text-white text-white dark:hover:bg-main/90"
+            className="bg-main hover:bg-main/90 cursor-pointer dark:bg-main dark:text-white text-white dark:hover:bg-main/90"
           >
             <ShoppingCart size={16} className="mr-2" />
             İndi al
