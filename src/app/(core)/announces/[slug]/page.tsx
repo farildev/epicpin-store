@@ -14,20 +14,16 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
+type Params = {
+  slug: string;
+};
 
-const AnnounceDetail = async ({ params }: PageProps) => {
+const AnnounceDetail = async ({ params }: { params: Params }) => {
   const post: BlogPost | null = await sanityClient.fetch(POST_QUERY, {
     slug: params.slug,
   });
 
-  if (!post) {
-    notFound();
-  }
+  if (!post) notFound();
 
   return (
     <div className="min-h-dvh pt-[120px] pb-10">
@@ -43,10 +39,11 @@ const AnnounceDetail = async ({ params }: PageProps) => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>{post?._id}</BreadcrumbPage>
+              <BreadcrumbPage>{post._id}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
+
         <div className="relative w-full h-[400px] my-8">
           {post.mainImage && (
             <Image
@@ -58,10 +55,10 @@ const AnnounceDetail = async ({ params }: PageProps) => {
             />
           )}
           {post.categories &&
-            post.categories.map((category: string, index: number) => (
+            post.categories.map((category, idx) => (
               <span
                 className="absolute top-5 right-5 text-white bg-main w-16 flex items-center justify-center p-1 rounded-full text-sm font-semibold"
-                key={index}
+                key={idx}
               >
                 {category}
               </span>
@@ -80,8 +77,8 @@ const AnnounceDetail = async ({ params }: PageProps) => {
                 width={32}
                 height={32}
                 className="rounded-full"
-                src={post.author?.image?.asset?.url || ''}
-                alt={post?.author?.name || 'Epicpin Store'}
+                src={post.author.image?.asset?.url || ''}
+                alt={post.author.name || 'Epicpin Store'}
               />
               <span>• {post.author.name}</span>
             </div>
@@ -101,21 +98,15 @@ export async function generateStaticParams() {
     `*[_type == "post" && defined(slug.current)][].slug.current`,
   );
 
-  return slugs.map((slug) => ({
-    slug,
-  }));
+  return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Params }) {
   const post: BlogPost | null = await sanityClient.fetch(POST_QUERY, {
     slug: params.slug,
   });
 
-  if (!post) {
-    return {
-      title: 'Post tapılmadı',
-    };
-  }
+  if (!post) return { title: 'Post tapılmadı' };
 
   return {
     title: `${post.title} | Blog`,
