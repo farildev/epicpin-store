@@ -50,7 +50,7 @@ const GameCard: React.FC<GameCardProps> = ({ product, icon }) => {
         <div className="flex items-center gap-2">
           <Button
             onClick={() => handleAddToBasket(product)}
-            className="cursor-pointer hover:bg-main/90 bg-main p-2 border dark:bg-transparent text-main dark:text-main dark:hover:bg-main dark:hover:text-white hover:text-white border-main"
+            className="cursor-pointer hover:bg-main/90 bg-main text-white p-2 border dark:bg-transparent dark:text-main dark:hover:bg-main dark:hover:text-white hover:text-white border-main"
           >
             <ShoppingBasket size={16} />
           </Button>
