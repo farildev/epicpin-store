@@ -1,7 +1,6 @@
-import React from 'react';
-import { Flame } from 'lucide-react';
-import { notFound } from 'next/navigation';
 import Image, { StaticImageData } from 'next/image';
+import { notFound } from 'next/navigation';
+import { Flame } from 'lucide-react';
 import GameCard from '@/components/common/game-card';
 import {
   Breadcrumb,
@@ -38,13 +37,11 @@ interface GameDetailProps {
   };
 }
 
-const GameDetail: React.FC<GameDetailProps> = async ({ params }) => {
+const GameDetail = async ({ params }: GameDetailProps) => {
   const { id } = params;
-  const game = gamesData.find((g) => g.id === parseInt(id)) as Game | undefined;
+  const game = gamesData.find((g) => g.id === parseInt(id));
 
-  if (!game) {
-    notFound();
-  }
+  if (!game) notFound();
 
   const imageSrc = typeof game.image === 'string' ? game.image : game.image.src;
 
@@ -131,13 +128,11 @@ const GameDetail: React.FC<GameDetailProps> = async ({ params }) => {
   );
 };
 
-export async function generateMetadata({ params }: GameDetailProps) {
-  const { id } = params;
-  const game = gamesData.find((g) => g.id === parseInt(id)) as Game | undefined;
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const game = gamesData.find((g) => g.id === parseInt(params.id));
+  if (!game) notFound();
 
-  if (!game) {
-    notFound();
-  }
+  const imageUrl = typeof game.image === 'string' ? game.image : game.image.src;
 
   return {
     title: game.name,
@@ -145,19 +140,19 @@ export async function generateMetadata({ params }: GameDetailProps) {
     openGraph: {
       title: game.name,
       description: game.description,
-      rating: game.gameRating,
       image: {
-        url: game.image,
+        url: imageUrl,
         width: 1200,
         height: 630,
         alt: game.name,
       },
+      rating: game.gameRating,
     },
     twitter: {
       card: 'summary_large_image',
       title: game.name,
       description: game.description,
-      images: game.image,
+      images: imageUrl,
     },
   };
 }

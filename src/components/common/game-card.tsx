@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '../ui/button';
 import { ShoppingBasket, ShoppingCart } from 'lucide-react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { toast } from 'sonner';
 import useBasketStore from '@/store/useBasketStore';
 
@@ -15,7 +15,7 @@ interface Product {
 
 interface GameCardProps {
   product: Product;
-  icon?: string;
+  icon?: StaticImageData;
 }
 const WHATSAPP_NUMBER = '+994513348446';
 
