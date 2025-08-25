@@ -318,7 +318,8 @@ export const gamesData: Game[] = [
   {
     id: 6,
     name: 'Steam Cash',
-    description: 'Steam cash money',
+    description:
+      'Steam Wallet kodları vasitəsilə hesabınızı balansla dolduraraq sevdiyiniz oyunları, DLC-ləri və əlavə məzmunları rahatlıqla əldə edə bilərsiniz. Bu kodlar rəqəmsal şəkildə təqdim olunur və sürətli aktivasiya imkanı ilə vaxt itirmədən oyun təcrübənizi genişləndirir. Steam balansı ilə yalnız oyunlar deyil, həm də oyun içi əşyalar, skinlər və proqramlar ala bilərsiniz. Asan, təhlükəsiz və çevik ödəniş üsulu ilə Steam dünyasında limitsiz əyləncənin qapısını açın.',
     image: SteamWallet,
     icon: SteamIcon,
     gameRating: 4.1,
@@ -328,42 +329,42 @@ export const gamesData: Game[] = [
         title: '5 Dollars',
         price: 9.5,
         description:
-          'Kiçik Diamond paketi. Günlük bonuslar və əsas kosmetiklər.',
+          'Steam hesabınız üçün 5$ balans əlavə edin. Kiçik oyunlar və DLC-lər üçün ideal.',
       },
       {
         id: 2,
         title: '10 Dollars',
         price: 17.68,
         description:
-          'Orta Diamond paketi. Elite Pass və premium kostyumlar üçün.',
+          'Steam hesabınız üçün 10$ balans. Endirimlər zamanı sərfəli alış-veriş üçün.',
       },
       {
         id: 3,
         title: '20 Dollars',
         price: 35.05,
         description:
-          'Böyük Diamond paketi. Yeni karakterlər və silah skinləri.',
+          'Steam hesabınıza 20$ əlavə edin. Yeni oyunlar və əlavə məzmun almaq üçün.',
       },
       {
         id: 4,
         title: '25 Dollars',
         price: 43.9,
         description:
-          'Çox böyük Diamond paketi. Bütün premium məzmun və ekskluziv əşyalar.',
+          '25$ Steam balansı ilə premium oyunları və DLC-ləri rahatlıqla əldə edin.',
       },
       {
         id: 5,
         title: '50 Dollars',
         price: 86,
         description:
-          'Çox böyük Diamond paketi. Bütün premium məzmun və ekskluziv əşyalar.',
+          '50$ Steam balansı. Böyük oyun paketləri və yüksək qiymətli məzmun üçün.',
       },
       {
         id: 6,
         title: '100 Dollars',
         price: 175.5,
         description:
-          'Çox böyük Diamond paketi. Bütün premium məzmun və ekskluziv əşyalar.',
+          '100$ Steam balansı. Seçdiyiniz istənilən oyunu və məzmunu sərbəst alın.',
       },
     ],
     mostUsed: false,
@@ -371,41 +372,51 @@ export const gamesData: Game[] = [
   {
     id: 8,
     name: 'Tiktok Jeton',
-    description: 'Tiktok jetonu',
+    description:
+      'TikTok jetonları platformada canlı yayımlar zamanı istifadə olunan rəqəmsal valyutadır. Onların köməyi ilə sevdiyiniz yayımçılara müxtəlif hədiyyələr göndərə və dəstəyinizi göstərə bilərsiniz. Jetonlar həm izləyicilərin diqqətini çəkmək, həm də yaradıcılarla daha yaxın ünsiyyət qurmaq üçün ən effektiv vasitələrdən biridir. Balansınıza jeton əlavə etməklə həm əyləncəli, həm də qarşılıqlı interaktiv bir təcrübə yaşaya bilərsiniz.',
+
     image: TiktokCoins,
     icon: TiktokIcon,
     gameRating: 4.1,
     products: [
       {
         id: 1,
-        title: '100 Diamonds',
-        price: 3,
+        title: '70 Jeton',
+        price: 2,
         description:
-          'Kiçik Diamond paketi. Günlük bonuslar və əsas kosmetiklər.',
+          '70 jeton ilə canlı yayımda kiçik hədiyyələr göndərə bilərsiniz.',
         rating: 4,
       },
       {
         id: 2,
-        title: '310 Diamonds',
-        price: 9,
+        title: '350 Jeton',
+        price: 10,
         description:
-          'Orta Diamond paketi. Elite Pass və premium kostyumlar üçün.',
+          '310 jeton ilə daha çox hədiyyə göndərərək sevdiyiniz yaradıcıları dəstəkləyin.',
         rating: 4,
       },
       {
         id: 3,
-        title: '520 Diamonds',
-        price: 15,
+        title: '700 Jeton',
+        price: 17,
         description:
-          'Böyük Diamond paketi. Yeni karakterlər və silah skinləri.',
+          '520 jeton ilə canlı yayımlarda premium hədiyyələr göndərmək imkanı.',
         rating: 5,
       },
       {
         id: 4,
-        title: '1080 Diamonds',
-        price: 30,
+        title: '1400 Jeton',
+        price: 29,
         description:
-          'Çox böyük Diamond paketi. Bütün premium məzmun və ekskluziv əşyalar.',
+          '1080 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
+        rating: 4,
+      },
+      {
+        id: 5,
+        title: '3500 Jeton',
+        price: 70,
+        description:
+          '3500 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
         rating: 4,
       },
     ],
