@@ -48,18 +48,21 @@ const Sidebar: React.FC = () => {
           </div>
           <nav className="flex flex-col gap-4 mt-10">
             <Link
+              onClick={closeSidebar}
               className="text-2xl font-semibold hover:text-main hover:scale-[101%] transition-all duration-300"
               href={'/'}
             >
               Ana səhifə
             </Link>
             <Link
+              onClick={closeSidebar}
               className="text-2xl font-semibold hover:text-main hover:scale-[101%] transition-all duration-300"
               href={'/products'}
             >
               Məhsullar
             </Link>
             <Link
+              onClick={closeSidebar}
               className="text-2xl font-semibold hover:text-main hover:scale-[101%] transition-all duration-300"
               href={'/announces'}
             >
