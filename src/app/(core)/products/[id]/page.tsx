@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, Star } from 'lucide-react';
+import { Flame } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import Image, { StaticImageData } from 'next/image';
 import GameCard from '@/components/common/game-card';
@@ -82,32 +82,22 @@ const GameDetail: React.FC<GameDetailProps> = async ({ params }) => {
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col gap-3">
                 <h1 className="text-3xl font-bold">{game.name}</h1>
                 {game.mostUsed && (
-                  <div className="text-xs font-semibold text-white flex items-center bg-main py-1 px-2 rounded-full">
+                  <span className="text-xs w-fit font-semibold text-white flex items-center bg-main py-1 px-2 rounded-full">
                     <Flame size={18} />
                     Ən çox satan
-                  </div>
+                  </span>
                 )}
               </div>
 
-              {game.gameRating && (
-                <div className="flex items-center gap-2">
-                  <Star className="text-yellow-500 fill-current" size={20} />
-                  <span className="text-lg font-semibold">
-                    {game.gameRating}
-                  </span>
-                  <span className="text-gray-500">
-                    Metacritic istifadəçi reytinqi
-                  </span>
-                </div>
-              )}
-
               {game.description && (
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">Təsvir</h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <h3 className="text-md text-gray-400 font-semibold mb-2">
+                    Təsvir
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed md:text-md text-sm">
                     {game.description}
                   </p>
                 </div>
