@@ -18,9 +18,10 @@ type Params = {
   slug: string;
 };
 
-const AnnounceDetail = async ({ params }: { params: Params }) => {
+const AnnounceDetail = async ({ params }: { params: Promise<Params> }) => {
+  const { slug } = await params;
   const post: BlogPost | null = await sanityClient.fetch(POST_QUERY, {
-    slug: params.slug,
+    slug,
   });
 
   if (!post) notFound();
@@ -101,9 +102,14 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { slug } = await params;
   const post: BlogPost | null = await sanityClient.fetch(POST_QUERY, {
-    slug: params.slug,
+    slug,
   });
 
   if (!post) return { title: 'Post tapılmadı' };

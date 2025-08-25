@@ -32,13 +32,13 @@ interface Game {
 }
 
 interface GameDetailProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 const GameDetail = async ({ params }: GameDetailProps) => {
-  const { id } = params;
+  const { id } = await params;
   const game = gamesData.find((g) => g.id === parseInt(id));
 
   if (!game) notFound();
@@ -128,8 +128,13 @@ const GameDetail = async ({ params }: GameDetailProps) => {
   );
 };
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const game = gamesData.find((g) => g.id === parseInt(params.id));
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const game = gamesData.find((g) => g.id === parseInt(id));
   if (!game) notFound();
 
   const imageUrl = typeof game.image === 'string' ? game.image : game.image.src;
