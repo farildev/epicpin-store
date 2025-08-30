@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                   .map((game) => (
                     <li key={game.id}>
                       <Link
-                        className="text-gray-500 hover:text-white transition-colors duration-200"
+                        className="text-gray-500 hover:text-gray-700 dark:hover:text-white transition-colors duration-200"
                         href={`/products/${game.id}`}
                       >
                         {game.name}
