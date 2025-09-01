@@ -381,42 +381,98 @@ export const gamesData: Game[] = [
     products: [
       {
         id: 1,
-        title: '70 Jeton',
-        price: 2,
+        title: '60 Jeton',
+        price: 1.5,
         description:
-          '70 jeton ilə canlı yayımda kiçik hədiyyələr göndərə bilərsiniz.',
+          '60 jeton ilə canlı yayımda kiçik hədiyyələr göndərə bilərsiniz.',
         rating: 4,
       },
       {
         id: 2,
-        title: '350 Jeton',
-        price: 10,
+        title: '100 Jeton',
+        price: 2,
         description:
-          '310 jeton ilə daha çox hədiyyə göndərərək sevdiyiniz yaradıcıları dəstəkləyin.',
+          '100 jeton ilə daha çox hədiyyə göndərərək sevdiyiniz yaradıcıları dəstəkləyin.',
         rating: 4,
       },
       {
         id: 3,
-        title: '700 Jeton',
-        price: 17,
+        title: '350 Jeton',
+        price: 6.7,
         description:
-          '520 jeton ilə canlı yayımlarda premium hədiyyələr göndərmək imkanı.',
+          '350 jeton ilə canlı yayımlarda premium hədiyyələr göndərmək imkanı.',
         rating: 5,
       },
       {
         id: 4,
-        title: '1400 Jeton',
-        price: 29,
+        title: '500 Jeton',
+        price: 9.8,
         description:
-          '1080 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
+          '500 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
         rating: 4,
       },
       {
         id: 5,
+        title: '700 Jeton',
+        price: 13.5,
+        description:
+          '700 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
+        rating: 4,
+      },
+      {
+        id: 6,
+        title: '1400 Jeton',
+        price: 27,
+        description:
+          '1400 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
+        rating: 4,
+      },
+      {
+        id: 7,
         title: '3500 Jeton',
-        price: 70,
+        price: 68.7,
         description:
           '3500 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
+        rating: 4,
+      },
+      {
+        id: 8,
+        title: '5000 Jeton',
+        price: 98,
+        description:
+          '5000 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
+        rating: 4,
+      },
+      {
+        id: 9,
+        title: '7000 Jeton',
+        price: 135,
+        description:
+          '7000 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
+        rating: 4,
+      },
+      {
+        id: 10,
+        title: '10000 Jeton',
+        price: 190,
+        description:
+          '10000 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
+        rating: 4,
+      },
+      {
+        id: 11,
+        title: '15000 Jeton',
+        price: 275,
+        description:
+          '15000 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
+        rating: 4,
+      },
+      {
+        id: 12,
+        title: '17500 Jeton',
+        price: 322,
+        description:
+          '17500 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
         rating: 4,
       },
     ],
