@@ -4,13 +4,15 @@ import VpIcon from '@/assets/images/valorant.png';
 import PbIcon from '@/assets/images/point-blank.png';
 import SteamIcon from '@/assets/images/steam.png';
 import TiktokIcon from '@/assets/images/tiktok-coin.webp';
-import PubgUc from '@/assets/images/categories/Pubg-Uc.jpg';
+import NitroIcon from '@/assets/images/Nitro.webp';
+import PubgUc from '@/assets/images/categories/Pubg-Uc.png';
 import PubgPrime from '@/assets/images/categories/Pubg-Prime.jpg';
 import ValorantTr from '@/assets/images/categories/Valorant-TR.jpg';
 import ValorantEu from '@/assets/images/categories/Valorant-EU.jpg';
 import PointBlank from '@/assets/images/categories/PointBlank.jpg';
 import SteamWallet from '@/assets/images/categories/Steam.jpg';
 import TiktokCoins from '@/assets/images/categories/TikTok.jpg';
+import DiscordNitro from '@/assets/images/categories/Discord.png';
 
 export interface Product {
   id: number;
@@ -473,6 +475,34 @@ export const gamesData: Game[] = [
         price: 322,
         description:
           '17500 jeton ilə istədiyiniz qədər böyük və eksklüziv hədiyyələr göndərin.',
+        rating: 4,
+      },
+    ],
+    mostUsed: false,
+  },
+  {
+    id: 9,
+    name: 'Discord Nitro',
+    description:
+      'Discord Nitro ilə dostlarınla ünsiyyətini yeni səviyyəyə qaldır! 🚀 Yüksək keyfiyyətli video və səs, daha böyük fayl yükləmələri, xüsusi emojilər və profil fərdiləşdirmələri ilə fərqini göstər. Sevimli serverlərində premium imkanlardan yararlan və Discord təcrübəni tam gücü ilə yaşa! ✨',
+    image: DiscordNitro,
+    icon: NitroIcon,
+    gameRating: 4.1,
+    products: [
+      {
+        id: 1,
+        title: 'Discord Nitro Basic 1Ay',
+        price: 6,
+        description:
+          'Təməl səviyyə discord nitro paketi alaraq Discordda görünüşünüzü dəyişdirin.',
+        rating: 4,
+      },
+      {
+        id: 2,
+        title: 'Discord Nitro 1 ay',
+        price: 13,
+        description:
+          '1-ci səviyyə Discord Nitro paketi. Bu paketlə görüntü və server boost edə bilərsiniz.',
         rating: 4,
       },
     ],
