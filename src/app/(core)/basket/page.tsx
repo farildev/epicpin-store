@@ -43,8 +43,6 @@ const Basket: React.FC = () => {
   return (
     <div className="w-full min-h-dvh pt-[120px] pb-10">
       <div className="siteContainer">
-        <h2 className="text-3xl font-semibold">Səbətim</h2>
-
         <div className="flex mt-5 items-center justify-between">
           <span className="text-lg font-semibold bg-transparent border-b border-main text-main dark:border-white dark:text-white pb-3">
             Ümumi qiymət : {totalPrice.toFixed(2)} ₼
@@ -52,6 +50,7 @@ const Basket: React.FC = () => {
 
           <div className="flex items-center gap-2">
             <Button
+              disabled={basket.length === 0}
               onClick={clearBasket}
               className="cursor-pointer bg-light text-black border dark:text-white hover:bg-light/80 dark:hover:bg-neutral-800 dark:border-gray-200/10 shadow-none dark:bg-neutral-900"
             >
@@ -59,6 +58,7 @@ const Basket: React.FC = () => {
               Səbəti boşalt
             </Button>
             <Button
+              disabled={basket.length === 0}
               onClick={handleBuyProducts}
               className="cursor-pointer bg-main text-white shadow-none hover:bg-main/80"
             >
@@ -81,8 +81,8 @@ const Basket: React.FC = () => {
               Səbət hal-hazırda boşdur!
             </h2>
             <Button
-              className="bg-main text-white cursor-pointer"
-              onClick={() => router.push('/games')}
+              className="bg-main text-white hover:bg-main/80 dark:hover:bg-main/80 cursor-pointer"
+              onClick={() => router.push('/products')}
             >
               <ArrowLeft />
               Alışveriş edin

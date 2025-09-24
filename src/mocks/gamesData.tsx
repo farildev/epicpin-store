@@ -52,54 +52,61 @@ export const gamesData: Game[] = [
       {
         id: 2,
         title: '60 UC',
-        price: 1.7,
+        price: 1.8,
         description:
           'Orta səviyyəli UC paketi. Premium keçid və ya yaxşı silah skinləri almaq üçün əla seçim.',
       },
       {
         id: 3,
         title: '180 UC',
-        price: 6,
+        price: 4.9,
         description:
           'Orta səviyyəli UC paketi. Premium keçid və ya yaxşı silah skinləri almaq üçün əla seçim.',
       },
       {
         id: 4,
         title: '325 UC',
-        price: 8,
+        price: 7.9,
         description:
           'Ən populyar UC paketi! Royal Pass almaq və əlavə kosmetiklər əldə etmək üçün kifayətdir.',
       },
       {
         id: 5,
+        title: '385 UC',
+        price: 9.8,
+        description:
+          'Ən populyar UC paketi! Royal Pass almaq və əlavə kosmetiklər əldə etmək üçün kifayətdir.',
+      },
+      {
+        id: 6,
         title: '660 UC',
         price: 15.7,
         description:
           'Böyük UC paketi. Premium məzmun, ekskluziv skinlər və Royal Pass Elite əldə edin.',
       },
       {
-        id: 6,
+        id: 7,
         title: '1800 UC',
-        price: 38,
+        price: 38.9,
         description:
           'Çox böyük UC paketi. Bir neçə aylıq premium məzmun və ekskluziv kolleksiyalar əldə edin.',
       },
       {
-        id: 7,
-        title: '3850 UC',
-        price: 76.5,
-        description:
-          'Maksimum UC paketi! Bütün premium məzmuna çıxışınız olsun və dostlarınıza hədiyyələr göndərin.',
-      },
-      {
         id: 8,
-        title: '8100 UC',
-        price: 150,
+        title: '3850 UC',
+        price: 77.85,
         description:
           'Maksimum UC paketi! Bütün premium məzmuna çıxışınız olsun və dostlarınıza hədiyyələr göndərin.',
       },
       {
         id: 9,
+        title: '8100 UC',
+        price: 153,
+        description:
+          'Maksimum UC paketi! Bütün premium məzmuna çıxışınız olsun və dostlarınıza hədiyyələr göndərin.',
+      },
+      {
+        id: 10,
         title: '16200 UC',
         price: 295,
         description:
